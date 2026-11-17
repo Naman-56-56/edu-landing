@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
 import { StatsBand } from '@/components/StatsBand';
@@ -8,10 +9,60 @@ import { Testimonials } from '@/components/Testimonials';
 import { PartnerSection } from '@/components/PartnerSection';
 import { ContactCta } from '@/components/ContactCta';
 import { Footer } from '@/components/Footer';
+import { SwayamLinuxCourse } from '@/components/SwayamLinuxCourse';
 import { useVerticalAnchors } from '@/hooks/useVerticalAnchors';
 
+const isSwayamRoute = () => {
+  if (typeof window === 'undefined') return false;
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  return (
+    hash === '#swayam-courses' ||
+    hash === '#swayam-linux' ||
+    hash.startsWith('#swayam') ||
+    path === '/swayam-courses' ||
+    path === '/swayam-linux'
+  );
+};
+
 function App() {
+  const [currentView, setCurrentView] = useState(() => (isSwayamRoute() ? 'swayam' : 'home'));
+
   useVerticalAnchors();
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (isSwayamRoute()) {
+        setCurrentView('swayam');
+      } else if (window.location.hash === '' || window.location.hash === '#college' || window.location.hash === '#school' || window.location.hash === '#health') {
+        setCurrentView('home');
+      }
+    };
+
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+    };
+  }, []);
+
+  const openSwayam = () => {
+    setCurrentView('swayam');
+    window.history.pushState(null, '', '#swayam-courses');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const returnHome = () => {
+    setCurrentView('home');
+    window.history.pushState(null, '', '#college');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (currentView === 'swayam') {
+    return <SwayamLinuxCourse onBack={returnHome} />;
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -25,7 +76,7 @@ function App() {
       <main id="main-content" className="flex-1">
         <HeroSection />
         <StatsBand />
-        <OrganizationVerticals />
+        <OrganizationVerticals onOpenSwayam={openSwayam} />
         <MethodSection />
         <FounderVision />
         <Testimonials />

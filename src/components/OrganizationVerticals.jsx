@@ -1,7 +1,7 @@
 import { VerticalCard } from '@/components/VerticalCard';
 import { verticalsData } from '@/data/landingData';
 
-export const OrganizationVerticals = () => (
+export const OrganizationVerticals = ({ onOpenSwayam }) => (
   <section id="verticals" className="scroll-mt-16">
     <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
       <div className="mx-auto max-w-2xl text-center">
@@ -14,7 +14,7 @@ export const OrganizationVerticals = () => (
 
       <div data-verticals-grid className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {verticalsData.map((v) => (
-          <VerticalCard key={v.id} vertical={v} />
+          <VerticalCard key={v.id} vertical={v} onOpenSwayam={onOpenSwayam} />
         ))}
       </div>
     </div>

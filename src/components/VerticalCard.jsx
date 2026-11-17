@@ -10,7 +10,7 @@ const toneStyles = {
   health: { icon: HeartPulse, text: 'text-health-600', check: 'text-health-500', fallback: 'from-health-100 to-health-50 text-health-500/50' },
 };
 
-export const VerticalCard = ({ vertical }) => {
+export const VerticalCard = ({ vertical, onOpenSwayam }) => {
   const href = websiteLinks[vertical.linkKey] || '#';
   const tone = toneStyles[vertical.tone] ?? toneStyles.brand;
 
@@ -62,6 +62,23 @@ export const VerticalCard = ({ vertical }) => {
           {vertical.ctaText}
           <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </a>
+
+        {vertical.id === 'college' && (
+          <div className="mt-2.5 pt-2.5 border-t border-slate-100">
+            <a
+              href="#swayam-courses"
+              onClick={(e) => {
+                if (onOpenSwayam) {
+                  e.preventDefault();
+                  onOpenSwayam();
+                }
+              }}
+              className="inline-flex items-center gap-1 text-xs font-semibold text-navy-600 transition-colors hover:text-navy-900 hover:underline"
+            >
+              To know more about our SWAYAM courses, click here →
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );
