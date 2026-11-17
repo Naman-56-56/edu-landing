@@ -1,84 +1,60 @@
-import React from 'react';
-import { ArrowDown, CheckCircle2, Sparkles } from 'lucide-react';
-import { ImageCarousel } from './ImageCarousel';
-import { organizationInfo, carouselSlides } from '../data/landingData';
-import './HeroSection.css';
+import { ArrowRight, BadgeCheck } from 'lucide-react';
+import { ImageCarousel } from '@/components/ImageCarousel';
+import { Button } from '@/components/ui/button';
+import { organizationInfo, carouselSlides, verticalsData } from '@/data/landingData';
 
-export const HeroSection = () => {
-  const handleScrollToVerticals = (e) => {
-    e.preventDefault();
-    const el = document.getElementById('verticals');
-    if (el) {
-      const offset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
+const dotColor = { brand: 'bg-brand-500', navy: 'bg-navy-600', health: 'bg-health-500' };
 
-  return (
-    <section id="about" className="hero-section section-padding">
-      <div className="container">
-        <div className="hero-grid">
-          {/* Left Column: About EduPyramids */}
-          <div className="hero-content">
-            <div className="badge-tag badge-tag-orange">
-              <Sparkles size={14} />
-              <span>{organizationInfo.aboutBadge}</span>
-            </div>
+export const HeroSection = () => (
+  <section id="top" className="relative overflow-hidden">
+    {/* soft brand wash */}
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_30rem_at_85%_-10%,var(--color-navy-50),transparent),radial-gradient(40rem_24rem_at_0%_10%,var(--color-brand-50),transparent)]"
+    />
 
-            <h1 className="hero-title">{organizationInfo.aboutHeading}</h1>
-
-            <p className="hero-lead">{organizationInfo.aboutLead}</p>
-
-            <div className="hero-paragraphs">
-              {organizationInfo.aboutParagraphs.map((para, index) => (
-                <p key={index} className="hero-text">
-                  {para}
-                </p>
-              ))}
-            </div>
-
-            {/* Highlights / Features */}
-            <div className="hero-highlights">
-              {organizationInfo.statsHighlights.map((stat, idx) => (
-                <div key={idx} className="hero-stat-pill">
-                  <CheckCircle2 size={16} className="stat-pill-icon" />
-                  <span className="stat-pill-label">{stat.label}:</span>
-                  <strong className="stat-pill-value">{stat.value}</strong>
-                </div>
-              ))}
-            </div>
-
-            {/* Subtle CTA */}
-            <div className="hero-cta-group">
-              <a
-                href="#verticals"
-                onClick={handleScrollToVerticals}
-                className="btn btn-primary hero-btn-primary"
-              >
-                <span>Discover Our Verticals</span>
-                <ArrowDown size={16} />
-              </a>
-
-              <a
-                href="#footer"
-                className="btn btn-secondary hero-btn-secondary"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column: Image Carousel */}
-          <div className="hero-carousel-col">
-            <ImageCarousel slides={carouselSlides} />
-          </div>
+    <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-8 pt-12 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-12 lg:pt-20">
+      <div className="animate-fade-up">
+        <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium text-slate-600">
+          {verticalsData.map((v) => (
+            <a key={v.id} href={`#${v.id}`} className="inline-flex items-center gap-2 hover:text-slate-900">
+              <span className={`size-2 rounded-full ${dotColor[v.tone]}`} />
+              {v.title.replace('EduPyramids ', '')}
+            </a>
+          ))}
         </div>
+
+        <h1 className="text-4xl font-bold leading-[1.1] sm:text-5xl lg:text-[3.5rem]">
+          Empowering futures through{' '}
+          <span className="text-navy-600">education</span> &amp;{' '}
+          <span className="text-brand-500">healthcare</span>
+        </h1>
+
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">{organizationInfo.heroLead}</p>
+
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href="#verticals" size="lg">
+            Explore our verticals
+            <ArrowRight />
+          </Button>
+          <Button href="#contact" size="lg" variant="outline">
+            Get in touch
+          </Button>
+        </div>
+
+        <ul className="mt-8 flex flex-col gap-2 text-sm font-medium text-slate-600 sm:flex-row sm:flex-wrap sm:gap-x-6">
+          {organizationInfo.trustPoints.map((t) => (
+            <li key={t} className="inline-flex items-center gap-2">
+              <BadgeCheck className="size-4 text-navy-600" />
+              {t}
+            </li>
+          ))}
+        </ul>
       </div>
-    </section>
-  );
-};
+
+      <div className="animate-fade-up [animation-delay:120ms]">
+        <ImageCarousel slides={carouselSlides} />
+      </div>
+    </div>
+  </section>
+);

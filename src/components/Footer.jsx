@@ -1,196 +1,107 @@
-import React from 'react';
-import { Mail, Phone, MapPin, ExternalLink, Heart } from 'lucide-react';
-import { websiteLinks } from '../config/websiteLinks';
-import { contactInfo, socialLinks, navigationLinks } from '../data/landingData';
-import './Footer.css';
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react';
+import { websiteLinks } from '@/config/websiteLinks';
+import { contactInfo, socialLinks, navigationLinks, verticalsData } from '@/data/landingData';
+import { Logo } from '@/components/Logo';
 
-export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const socialIcons = { LinkedIn: Linkedin, YouTube: Youtube, Facebook, Instagram };
 
-  const handleNavClick = (e, href) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const element = document.getElementById(targetId);
-      if (element) {
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-      }
-    }
-  };
+const linkClass = 'text-sm text-slate-600 transition-colors hover:text-slate-900';
 
-  return (
-    <footer id="footer" className="footer-wrapper">
-      <div className="container footer-container">
-        {/* Top Section */}
-        <div className="footer-top-grid">
-          {/* Brand Column */}
-          <div className="footer-col footer-col-brand">
-            <div className="footer-brand">
-              <img
-                src="/assets/EduPyramidsLogo.png"
-                alt="EduPyramids Logo"
-                className="footer-logo-img"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const fallback = e.currentTarget.parentElement.querySelector('.footer-logo-fallback');
-                  if (fallback) fallback.style.display = 'block';
-                }}
-              />
-              <span className="footer-logo-fallback" style={{ display: 'none' }}>
-                <span className="logo-accent">Edu</span>Pyramids
-              </span>
-            </div>
-
-            <p className="footer-brand-text">
-              Transforming foundational education, collegiate industry readiness, and community health literacy through integrated, accessible solutions.
-            </p>
-
-            {/* Social Icons */}
-            <div className="footer-socials">
-              {socialLinks.map((social) => (
+export const Footer = () => (
+  <footer className="border-t border-slate-200 bg-slate-50">
+    <div className="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
+      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
+        <div>
+          <Logo />
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
+            Transforming foundational education, collegiate industry readiness, and community health literacy through
+            integrated, accessible solutions.
+          </p>
+          <div className="mt-6 flex gap-2">
+            {socialLinks.map((s) => {
+              const Icon = socialIcons[s.name];
+              return (
                 <a
-                  key={social.name}
-                  href={social.href}
+                  key={s.name}
+                  href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="footer-social-link"
-                  aria-label={social.name}
+                  aria-label={s.name}
+                  className="flex size-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 transition-colors hover:border-slate-300 hover:text-slate-900"
                 >
-                  <img
-                    src={social.iconSrc}
-                    alt={social.name}
-                    className="footer-social-icon-img"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
+                  {Icon && <Icon className="size-4" />}
                 </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Navigation Links */}
-          <div className="footer-col">
-            <h4 className="footer-col-title">Navigation</h4>
-            <ul className="footer-links-list">
-              {navigationLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className="footer-link"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Verticals Direct Portals */}
-          <div className="footer-col">
-            <h4 className="footer-col-title">Our Verticals</h4>
-            <ul className="footer-links-list">
-              <li>
-                <a
-                  href={websiteLinks.school}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link footer-link-external"
-                >
-                  <span>EduPyramids School</span>
-                  <ExternalLink size={13} />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={websiteLinks.college}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link footer-link-external"
-                >
-                  <span>EduPyramids College</span>
-                  <ExternalLink size={13} />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={websiteLinks.health}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-link footer-link-external"
-                >
-                  <span>EduPyramids Health</span>
-                  <ExternalLink size={13} />
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div className="footer-col footer-col-contact">
-            <h4 className="footer-col-title">Get in Touch</h4>
-            <div className="footer-contact-items">
-              <div className="footer-contact-item">
-                <Mail size={18} className="footer-contact-icon" />
-                <div>
-                  <div className="footer-contact-label">Email</div>
-                  <a
-                    href={`mailto:${contactInfo.email}`}
-                    className="footer-contact-val"
-                  >
-                    {contactInfo.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="footer-contact-item">
-                <Phone size={18} className="footer-contact-icon" />
-                <div>
-                  <div className="footer-contact-label">Phone</div>
-                  <a
-                    href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
-                    className="footer-contact-val"
-                  >
-                    {contactInfo.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="footer-contact-item">
-                <MapPin size={18} className="footer-contact-icon" />
-                <div>
-                  <div className="footer-contact-label">Headquarters</div>
-                  <span className="footer-contact-val">
-                    {contactInfo.address}
-                  </span>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="footer-bottom">
-          <p className="footer-copyright">
-            &copy; {currentYear} EduPyramids. All rights reserved.
-          </p>
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900">Navigation</h3>
+          <ul className="mt-4 space-y-3">
+            {navigationLinks.map((l) => (
+              <li key={l.name}>
+                <a href={l.href} className={linkClass}>
+                  {l.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <div className="footer-legal-links">
-            <a href="#about" className="footer-legal-link">Privacy Policy</a>
-            <span className="footer-legal-divider">•</span>
-            <a href="#about" className="footer-legal-link">Terms of Service</a>
-            <span className="footer-legal-divider">•</span>
-            <a href="#about" className="footer-legal-link">Sitemap</a>
-          </div>
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900">Our verticals</h3>
+          <ul className="mt-4 space-y-3">
+            {verticalsData.map((v) => (
+              <li key={v.id}>
+                <a
+                  href={websiteLinks[v.linkKey]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkClass} inline-flex items-center gap-1`}
+                >
+                  {v.title}
+                  <ArrowUpRight className="size-3.5" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900">Get in touch</h3>
+          <ul className="mt-4 space-y-3 text-sm text-slate-600">
+            <li className="flex gap-3">
+              <Mail className="mt-0.5 size-4 shrink-0 text-slate-400" />
+              <a href={`mailto:${contactInfo.email}`} className={linkClass}>
+                {contactInfo.email}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <Phone className="mt-0.5 size-4 shrink-0 text-slate-400" />
+              <a href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`} className={linkClass}>
+                {contactInfo.phone}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <MapPin className="mt-0.5 size-4 shrink-0 text-slate-400" />
+              <span className="leading-relaxed">
+                {contactInfo.company}
+                <br />
+                {contactInfo.address}
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
-  );
-};
+
+      <div className="mt-14 flex flex-col gap-4 border-t border-slate-200 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; {new Date().getFullYear()} {contactInfo.company} All rights reserved.</p>
+        <div className="flex gap-6">
+          <a href="#top" className="hover:text-slate-900">Privacy Policy</a>
+          <a href="#top" className="hover:text-slate-900">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+);

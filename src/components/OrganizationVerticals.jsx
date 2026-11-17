@@ -1,40 +1,22 @@
-import React from 'react';
-import { Layers } from 'lucide-react';
-import { VerticalCard } from './VerticalCard';
-import { verticalsData } from '../data/landingData';
-import './OrganizationVerticals.css';
+import { VerticalCard } from '@/components/VerticalCard';
+import { verticalsData } from '@/data/landingData';
 
-export const OrganizationVerticals = () => {
-  return (
-    <section id="verticals" className="verticals-section section-padding">
-      <div className="container">
-        {/* Section Header */}
-        <div className="verticals-header">
-          <div className="badge-tag badge-tag-navy">
-            <Layers size={14} />
-            <span>Organizational Verticals</span>
-          </div>
-
-          <h2 className="verticals-main-title">
-            Our Three Pillars of Impact
-          </h2>
-
-          <p className="verticals-main-subtitle">
-            Explore EduPyramids specialized divisions driving transformative outcomes across primary education, higher academic institutions, and public healthcare.
-          </p>
-        </div>
-
-        {/* Verticals List */}
-        <div className="verticals-list">
-          {verticalsData.map((vertical, index) => (
-            <VerticalCard
-              key={vertical.id}
-              vertical={vertical}
-              isReversed={index % 2 === 1}
-            />
-          ))}
-        </div>
+export const OrganizationVerticals = () => (
+  <section id="verticals" className="scroll-mt-16">
+    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-sm font-semibold text-brand-600">Our verticals</p>
+        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Three pillars of impact</h2>
+        <p className="mt-4 text-lg leading-relaxed text-slate-600">
+          Specialised divisions driving outcomes across school education, higher education and public health.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <div data-verticals-grid className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {verticalsData.map((v) => (
+          <VerticalCard key={v.id} vertical={v} />
+        ))}
+      </div>
+    </div>
+  </section>
+);

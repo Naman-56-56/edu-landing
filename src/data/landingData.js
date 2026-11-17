@@ -1,50 +1,92 @@
 /**
- * Centralized content repository for the EduPyramids main landing page.
- * Temporary placeholder and brochure-aligned content that can be easily updated.
+ * Centralized content for the EduPyramids landing page.
+ * Facts, numbers and quotes are taken from the EduPyramids brochure.
  */
 
 export const organizationInfo = {
   name: "EduPyramids",
   tagline: "Empowering Futures through Integrated Education & Healthcare",
-  aboutHeading: "About EduPyramids",
-  aboutBadge: "Integrated Knowledge & Well-being",
-  aboutLead:
-    "EduPyramids is dedicated to building inclusive, high-impact ecosystems across foundational schooling, higher education, and community healthcare literacy.",
-  aboutParagraphs: [
-    "Established with a vision to democratize access to high-quality learning and well-being resources, EduPyramids operates across three core pillars: EduPyramids School, EduPyramids College, and EduPyramids Health. We believe that societal progress starts with robust education and healthy communities.",
-    "By bridging modern pedagogical methods with accessible technology and community-centered initiatives, EduPyramids empowers learners, educators, and healthcare advocates to develop meaningful skills and make lasting contributions.",
+  heroLead:
+    "IT, AI, communication and life skills for schools and colleges, and health training for frontline workers — a low-cost skilling solution that gets learners ready for the AI era.",
+  trustPoints: ["A SINE, IIT Bombay–incubated company", "IEEE Standard 2955-2025"],
+};
+
+export const reachStats = [
+  { value: "10 million+", label: "Learners" },
+  { value: "5,000+", label: "Institutions" },
+  { value: "1 million+", label: "New students every year" },
+  { value: "100+", label: "Skilling courses" },
+  { value: "22", label: "Indian languages, plus English" },
+];
+
+export const implementedIn = [
+  "Army Public Schools",
+  "Delhi Public School",
+  "DAV Public School",
+  "SNBP International School, Pune",
+  "VIT, Chennai",
+  "SWAYAM Plus",
+  "WHEELS Global Foundation",
+  "IIT Madras Zanzibar",
+];
+
+export const methodInfo = {
+  eyebrow: "Our method",
+  heading: "Watch. Practice. Repeat.",
+  graphic: "/assets/watch-practice-repeat.webp",
+  lead:
+    "EduPyramids builds on the multi-award-winning Spoken Tutorial project of IIT Bombay. Self-learning is our way of teaching.",
+  body:
+    "Learners watch a step, pause, try it themselves and move on, at their own pace. This builds strong skill retention and confidence.",
+  points: [
+    "Learners practise side by side with the tutorial",
+    "Beginner-tested, so anyone can learn alone",
+    "Assessments and certificates built in",
   ],
-  statsHighlights: [
-    { label: "Core Pillars", value: "3 Verticals" },
-    { label: "Community Focus", value: "Nationwide" },
-    { label: "Integrated Approach", value: "Holistic" },
+  standard: {
+    code: "IEEE 2955-2025",
+    title: "Recognised as an IEEE Standard",
+    text: "The Spoken Tutorial method is a global standard for self-learning.",
+  },
+  settings: [
+    "Works online, offline and on low bandwidth",
+    "Aligned with NEP 2020",
+    "Free and open source software, so no licence fees",
   ],
 };
 
 export const carouselSlides = [
   {
     id: 1,
-    title: "Nurturing Foundational Minds",
-    subtitle: "Empowering school students with digital literacy, STEM fundamentals, and modern classroom resources.",
-    image: "/assets/edupyramids-carousel.webp",
-    alt: "EduPyramids School foundational learning",
-    tag: "School Education",
+    title: "Watch. Practice. Repeat.",
+    subtitle: "Learners watch a short video in one window and practise the same steps in the next.",
+    image: "/assets/carousel-side-by-side.webp",
+    alt: "Two learners sharing a computer during a Spoken Tutorial workshop",
+    tag: "Side-by-side learning",
   },
   {
     id: 2,
-    title: "Bridging College & Industry",
-    subtitle: "Preparing collegiate students for meaningful careers through industry-aligned certifications and practical skills.",
-    image: "/assets/edupyramids-carousel-1.webp",
-    alt: "EduPyramids College higher education",
-    tag: "Higher Education",
+    title: "Strengthening Community Health",
+    subtitle: "Training ASHA and Anganwadi workers with district administrations.",
+    image: "/assets/carousel-health-training.webp",
+    alt: "Frontline health workers in a group training session",
+    tag: "Health",
   },
   {
     id: 3,
-    title: "Strengthening Community Health",
-    subtitle: "Promoting preventive health literacy, well-being awareness, and accessible healthcare training initiatives.",
-    image: "/assets/edupyramids-carousel-2.webp",
-    alt: "EduPyramids Health community initiatives",
-    tag: "Health & Well-being",
+    title: "Taking Spoken Tutorial to Africa",
+    subtitle: "Hands-on IT workshops at IIT Madras Zanzibar, in Swahili and English, May 2025.",
+    image: "/assets/carousel-zanzibar-group.webp",
+    alt: "Participants and trainers at the IIT Madras Zanzibar campus, Bweleo",
+    tag: "Global reach",
+  },
+  {
+    id: 4,
+    title: "Learning by Doing",
+    subtitle: "A full lab during a workshop: every learner at a computer, at their own pace.",
+    image: "/assets/carousel-workshop-lab.webp",
+    alt: "A full computer lab during a Spoken Tutorial workshop",
+    tag: "Workshops",
   },
 ];
 
@@ -52,97 +94,178 @@ export const verticalsData = [
   {
     id: "school",
     title: "EduPyramids School",
-    tagline: "Foundational & K-12 Educational Excellence",
+    tagline: "Computer, AI & life skills for schools",
     badge: "K-12 & Foundational",
-    description:
-      "EduPyramids School transforms school learning by pairing curriculum-aligned pedagogy with interactive technology. We support schools, teachers, and young learners with digital learning resources, foundational coding, and experiential STEM education designed to spark lifelong curiosity.",
+    summary:
+      "Students learn computer, AI, communication and life skills on their own, in English or 22 Indian languages.",
     initiatives: [
-      "Curriculum-aligned digital learning tools & audio-visual modules",
-      "Experiential STEM, coding, and digital literacy for school students",
-      "Teacher enablement workshops & contemporary pedagogical training",
-      "Collaborative programs tailored for private and regional schools",
+      "Matched to the school curriculum, for students and teachers",
+      "No specialist teacher needed",
+      "Works offline and on low bandwidth",
+      "Personality and human development: empathy, communication, growth mindset",
     ],
+    tone: "brand",
     ctaText: "Explore School",
     linkKey: "school",
-    image: "/assets/digital-literacy.webp",
-    imageAlt: "EduPyramids School digital literacy and learning",
-    accentColor: "#F26321",
-    accentLight: "#FFF4EE",
+    image: "/assets/vertical-school.webp",
+    imageAlt: "School students holding their Spoken Tutorial certificates",
   },
   {
     id: "college",
     title: "EduPyramids College",
-    tagline: "Higher Education & Industry Readiness",
+    tagline: "Hands-on IT courses with certification",
     badge: "Higher Education",
-    description:
-      "EduPyramids College bridges the transition from academic study to professional accomplishment. Working closely with colleges and universities, we deliver career-ready skills, industry certifications, and hands-on technical workshops that prepare collegiate graduates for the competitive workforce.",
+    summary:
+      "Map 100+ IT courses to your syllabus, plus courses in AI, communication and life skills, and certify your students.",
     initiatives: [
-      "Industry-recognized certifications in emerging technologies",
-      "Hands-on project development and practical skill workshops",
-      "Faculty Development Programs (FDP) and academic institutional support",
-      "Career mentorship, seminar series, and employability training",
+      "C, C++, Java, Python and more, with certificates",
+      "Strengthens your NAAC record",
+      "Linux course on SWAYAM Plus earns ABC credits",
+      "Skill Accelerator Labs: a dedicated lab in your college",
     ],
+    tone: "navy",
     ctaText: "Explore College",
     linkKey: "college",
-    image: "/assets/industry-relevant-courses.webp",
-    imageAlt: "EduPyramids College students and technical training",
-    accentColor: "#2E3494",
-    accentLight: "#EEF0FC",
+    image: "/assets/vertical-college.webp",
+    imageAlt: "College students practising in a computer lab",
   },
   {
     id: "health",
     title: "EduPyramids Health",
-    tagline: "Community Wellness & Healthcare Literacy",
+    tagline: "Health Spoken Tutorial for frontline workers",
     badge: "Healthcare & Well-being",
-    description:
-      "EduPyramids Health champions preventative health awareness, wellness education, and community healthcare training. By making vital health information accessible and actionable, we empower individuals, families, and institutions to adopt proactive health practices.",
+    summary:
+      "With district administrations, we train ASHA and Anganwadi workers on breastfeeding, infant feeding and adolescent nutrition.",
     initiatives: [
-      "Community health awareness campaigns and preventative care literacy",
-      "Essential first-aid, CPR, and basic life-support awareness programs",
-      "Student & institutional mental well-being and ergonomic health guides",
-      "Multilingual healthcare communication and public health outreach",
+      "60,000 frontline workers trained",
+      "105 video modules in 30 languages",
+      "Underweight fell by 47% across 8,346 children",
+      "Thousands of workers trained to one standard",
     ],
+    tone: "health",
     ctaText: "Explore Health",
     linkKey: "health",
-    image: "/assets/skill-certification.webp",
-    imageAlt: "EduPyramids Health wellness and healthcare programs",
-    accentColor: "#0D9488",
-    accentLight: "#E6FFFA",
+    image: "/assets/vertical-health-care.webp",
+    imageAlt: "Illustration of a mother feeding her baby",
   },
 ];
 
+export const testimonials = [
+  {
+    quote:
+      "This approach consistently helped my students achieve a 100% pass rate with 85% average and strong confidence.",
+    name: "Mr. Amit Kumar",
+    role: "Computer Teacher",
+    org: "Jawahar Navodaya Vidyalaya, Himachal Pradesh",
+    tone: "brand",
+  },
+  {
+    quote:
+      "So far, 56,883 VIT students have cleared the Spoken Tutorial tests and received their certificates. Courses in regional languages have greatly helped students from rural backgrounds.",
+    name: "Prof. Subbulakshmi",
+    role: "VIT, Chennai",
+    org: "",
+    tone: "navy",
+  },
+  {
+    quote:
+      "Spoken Tutorial enabled large-scale, standardized training that would have been impossible through in-person sessions.",
+    name: "Ms. Ashima Mittal, IAS",
+    role: "CEO, Zilla Parishad",
+    org: "Nashik district",
+    tone: "health",
+  },
+  {
+    quote:
+      "Before this course, I knew nothing about computers and was scared to learn. Spoken Tutorial explained everything in very simple language, and I became interested in learning more. I have now completed four Spoken Tutorial courses and earned certificates. My dream is to become an IT engineer.",
+    name: "Krupa Jangam",
+    role: "Class 8",
+    org: "Vandangi village, Maharashtra",
+    tone: "brand",
+  },
+  {
+    quote:
+      "Spoken Tutorials helped our participants prepare for the workshop by learning to install and use Blender beforehand. During the workshop, they turned to the tutorials again and again for reference. In just four days, they became confident in 3D animation and interactive game development.",
+    name: "Prof. Uma Kanjilal",
+    role: "Vice-Chancellor",
+    org: "Indira Gandhi National Open University (IGNOU)",
+    tone: "navy",
+  },
+  {
+    quote:
+      "While the National Nutrition Mission guidelines recommend 28 grams weight gain per day, the Health Spoken Tutorials have helped us achieve weight gain of 35-40 grams and even 50 grams per day.",
+    name: "Minal Karanwal, IAS",
+    role: "Sub Divisional Officer and Project Officer",
+    org: "Nandurbar district, Maharashtra",
+    tone: "health",
+  },
+];
+
+export const partnerAudiences = [
+  {
+    id: "school",
+    title: "If you are a school",
+    text: "Students learn computer, AI, communication and life skills on their own, in English or 22 Indian languages. No specialist teacher needed, and it works offline.",
+  },
+  {
+    id: "college",
+    title: "If you are a college",
+    text: "Map 100+ IT courses to your syllabus, plus courses in AI, communication and life skills. Certify students and strengthen your NAAC record.",
+  },
+  {
+    id: "ngo",
+    title: "If you are an NGO or CSR team",
+    text: "Make your budget go further and reach lakhs of learners. We co-create tutorials in your communities' languages and give you data to report to funders.",
+  },
+  {
+    id: "district",
+    title: "If you are a district administration",
+    text: "Train thousands of frontline workers to one standard. In our health projects, underweight fell by 47% across 8,346 children.",
+  },
+];
+
+/**
+ * Founder's vision.
+ * DRAFT — needs Prof. Kannan's approval before the site goes live.
+ * Every sentence is taken from his own published writing:
+ *   - headline, para 3: "Why Every Student Needs an Educational Laptop"
+ *   - para 1: "A Note from Prof. Kannan M. Moudgalya" (Future-Ready Children flyer)
+ *   - paras 2 and 4: "Spoken Tutorial: A Collaborative and Scalable Education Technology",
+ *     CSI Communications, September 2011
+ * Set this to null to hide the section.
+ */
+export const founderVision = {
+  name: "Prof. Kannan M. Moudgalya",
+  title: "Founder and Director, EduPyramids Educational Services Pvt. Ltd.",
+  photo: "/assets/prof-kannan-moudgalya.jpg",
+  headline: "In the age of AI, every student must learn how to learn.",
+  quote: [
+    "From my humble beginnings in Namakkal, studying in a Tamil-medium school, to becoming a professor at IIT Bombay, I received opportunities that shaped my life. Today, I want to help create similar opportunities for children across India.",
+    "The target audience for a spoken tutorial is a remote child, working alone at midnight without anyone to help her. This is the only time when she will get time to study, after completing all her chores.",
+    "One cannot learn to swim by watching a video. The same is true of software. A student learns only by doing. Watch, practice, repeat.",
+    "Spoken tutorial has the potential to empower every child in our country.",
+  ],
+};
+
 export const navigationLinks = [
-  { name: "About Us", href: "#about" },
   { name: "School", href: "#school" },
   { name: "College", href: "#college" },
   { name: "Health", href: "#health" },
+  { name: "Our method", href: "#about" },
+  { name: "Founder", href: "#founder" },
+  { name: "Testimonials", href: "#testimonials" },
 ];
 
 export const contactInfo = {
-  email: "info@edupyramids.org",
+  email: "contact@edupyramids.org",
   phone: "+91 22 2576 4229",
-  address: "Seat 60, SINE, RBTIC Building, IIT Bombay, Powai, Mumbai - 400 076, India",
+  company: "EduPyramids Educational Services Pvt. Ltd.",
+  address: "6016A, SINE, RBTIC, IIT Bombay, Powai, Mumbai 400076",
 };
 
 export const socialLinks = [
-  {
-    name: "LinkedIn",
-    iconSrc: "/assets/linkedin.png",
-    href: "https://www.linkedin.com/company/spoken-tutorial-school/home/",
-  },
-  {
-    name: "YouTube",
-    iconSrc: "/assets/youtube.png",
-    href: "https://www.youtube.com/user/SpokenTutorialIITB",
-  },
-  {
-    name: "Facebook",
-    iconSrc: "/assets/facebook.png",
-    href: "https://www.facebook.com/SpokenTutorial.org",
-  },
-  {
-    name: "Instagram",
-    iconSrc: "/assets/instagram.png",
-    href: "https://www.instagram.com",
-  },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/spoken-tutorial-school/home/" },
+  { name: "YouTube", href: "https://www.youtube.com/user/SpokenTutorialIITB" },
+  { name: "Facebook", href: "https://www.facebook.com/SpokenTutorial.org" },
+  { name: "Instagram", href: "https://www.instagram.com" },
 ];
