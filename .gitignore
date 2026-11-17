@@ -40,4 +40,4 @@ dist-ssr
 *.svg
 *.ico
 *.avif
-public/assets/
+!public/assets/**
