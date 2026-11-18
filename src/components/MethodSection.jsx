@@ -48,7 +48,7 @@ export const MethodSection = () => (
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="text-sm font-semibold text-slate-900">Built for every setting</h3>
+          <h3 className="text-sm font-semibold text-slate-900">Built for Every Setting</h3>
           <ul className="mt-4 space-y-2.5">
             {methodInfo.settings.map((s) => (
               <li key={s} className="flex gap-2.5 text-sm text-slate-600">

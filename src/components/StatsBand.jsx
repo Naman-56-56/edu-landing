@@ -3,7 +3,7 @@ import { implementedIn, reachStats } from '@/data/landingData';
 export const StatsBand = () => (
   <section aria-label="Spoken Tutorial in numbers" className="px-4 pb-4 pt-10 sm:px-6 lg:pt-14">
     <div className="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white px-6 py-8 shadow-sm sm:px-10">
-      <p className="text-center text-sm font-semibold text-brand-600 lg:text-left">Our reach so far</p>
+      <p className="text-center text-sm font-semibold text-brand-600 lg:text-left">Our Reach So Far</p>
       <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x lg:divide-slate-200">
         {reachStats.map((s, i) => (
           <div
@@ -18,7 +18,7 @@ export const StatsBand = () => (
         ))}
       </dl>
       <div className="mt-8 flex flex-col gap-3 border-t border-slate-100 pt-6 lg:flex-row lg:items-baseline lg:gap-6">
-        <p className="shrink-0 text-center text-sm font-medium text-slate-500 lg:text-left">Implemented in and partnered with</p>
+        <p className="shrink-0 text-center text-sm font-medium text-slate-500 lg:text-left">Implemented in and Partnered With</p>
         <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-slate-700 lg:justify-start">
           {implementedIn.map((name) => (
             <li key={name}>{name}</li>

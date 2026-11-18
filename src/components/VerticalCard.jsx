@@ -45,9 +45,28 @@ export const VerticalCard = ({ vertical, onOpenSwayam }) => {
 
         <ul className="mt-5 space-y-2.5 border-t border-slate-100 pt-5 short:mt-4 short:space-y-2 short:pt-4">
           {vertical.initiatives.map((item) => (
-            <li key={item} className="flex gap-2.5 text-sm leading-snug text-slate-600">
+            <li key={typeof item === 'string' ? item : item.link} className="flex gap-2.5 text-sm leading-snug text-slate-600">
               <Check className={cn('mt-0.5 size-4 shrink-0', tone.check)} strokeWidth={2.5} />
-              <span>{item}</span>
+              {typeof item === 'string' ? (
+                <span>{item}</span>
+              ) : (
+                <span>
+                  {item.before}
+                  <a
+                    href="#swayam-courses"
+                    onClick={(e) => {
+                      if (onOpenSwayam) {
+                        e.preventDefault();
+                        onOpenSwayam();
+                      }
+                    }}
+                    className={cn('font-semibold underline decoration-1 underline-offset-2 hover:text-slate-900', tone.text)}
+                  >
+                    {item.link}
+                  </a>
+                  {item.after}
+                </span>
+              )}
             </li>
           ))}
         </ul>

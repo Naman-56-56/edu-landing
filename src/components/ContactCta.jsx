@@ -19,7 +19,7 @@ export const ContactCta = () => (
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button href={`mailto:${contactInfo.email}`} variant="white" size="lg">
             <Mail />
-            Email us
+            Email Us
           </Button>
           <Button
             href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}

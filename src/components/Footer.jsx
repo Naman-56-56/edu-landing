@@ -14,8 +14,7 @@ export const Footer = () => (
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
-            Transforming foundational education, collegiate industry readiness, and community health literacy through
-            integrated, accessible solutions.
+            EduPyramids is a low-cost skilling solution that gets learners ready for the AI era.
           </p>
           <div className="mt-6 flex gap-2">
             {socialLinks.map((s) => {
@@ -50,7 +49,7 @@ export const Footer = () => (
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-slate-900">Our verticals</h3>
+          <h3 className="text-sm font-semibold text-slate-900">Our Verticals</h3>
           <ul className="mt-4 space-y-3">
             {verticalsData.map((v) => (
               <li key={v.id}>
@@ -69,7 +68,7 @@ export const Footer = () => (
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-slate-900">Get in touch</h3>
+          <h3 className="text-sm font-semibold text-slate-900">Get in Touch</h3>
           <ul className="mt-4 space-y-3 text-sm text-slate-600">
             <li className="flex gap-3">
               <Mail className="mt-0.5 size-4 shrink-0 text-slate-400" />

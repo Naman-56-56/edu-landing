@@ -5,7 +5,7 @@
 
 export const organizationInfo = {
   name: "EduPyramids",
-  tagline: "Empowering Futures through Integrated Education & Healthcare",
+  tagline: "Empowering Futures through Skills Training",
   heroLead:
     "IT, AI, communication and life skills for schools and colleges, and health training for frontline workers — a low-cost skilling solution that gets learners ready for the AI era.",
   trustPoints: ["A SINE, IIT Bombay–incubated company", "IEEE Standard 2955-2025"],
@@ -31,7 +31,7 @@ export const implementedIn = [
 ];
 
 export const methodInfo = {
-  eyebrow: "Our method",
+  eyebrow: "Our Method",
   heading: "Watch. Practice. Repeat.",
   graphic: "/assets/watch-practice-repeat.webp",
   lead:
@@ -39,7 +39,7 @@ export const methodInfo = {
   body:
     "Learners watch a step, pause, try it themselves and move on, at their own pace. This builds strong skill retention and confidence.",
   points: [
-    "Learners practise side by side with the tutorial",
+    "Learners practice side by side with the tutorial",
     "Beginner-tested, so anyone can learn alone",
     "Assessments and certificates built in",
   ],
@@ -59,10 +59,10 @@ export const carouselSlides = [
   {
     id: 1,
     title: "Watch. Practice. Repeat.",
-    subtitle: "Learners watch a short video in one window and practise the same steps in the next.",
+    subtitle: "Learners watch a short video in one window and practice the same steps in the next.",
     image: "/assets/carousel-side-by-side.webp",
     alt: "Two learners sharing a computer during a Spoken Tutorial workshop",
-    tag: "Side-by-side learning",
+    tag: "Side-by-Side Learning",
   },
   {
     id: 2,
@@ -78,7 +78,7 @@ export const carouselSlides = [
     subtitle: "Hands-on IT workshops at IIT Madras Zanzibar, in Swahili and English, May 2025.",
     image: "/assets/carousel-zanzibar-group.webp",
     alt: "Participants and trainers at the IIT Madras Zanzibar campus, Bweleo",
-    tag: "Global reach",
+    tag: "Global Reach",
   },
   {
     id: 4,
@@ -120,14 +120,15 @@ export const verticalsData = [
     initiatives: [
       "C, C++, Java, Python and more, with certificates",
       "Strengthens your NAAC record",
-      "Linux course on SWAYAM Plus earns ABC credits",
+      // Rendered with "SWAYAM Plus" linking to the SWAYAM Linux course page.
+      { before: "We have partnered with ", link: "SWAYAM Plus", after: "; select courses earn ABC credits." },
       "Skill Accelerator Labs: a dedicated lab in your college",
     ],
     tone: "navy",
     ctaText: "Explore College",
     linkKey: "college",
     image: "/assets/vertical-college.webp",
-    imageAlt: "College students practising in a computer lab",
+    imageAlt: "College students practicing in a computer lab",
   },
   {
     id: "health",
@@ -204,30 +205,30 @@ export const testimonials = [
 export const partnerAudiences = [
   {
     id: "school",
-    title: "If you are a school",
+    title: "If You Are a School",
     text: "Students learn computer, AI, communication and life skills on their own, in English or 22 Indian languages. No specialist teacher needed, and it works offline.",
   },
   {
     id: "college",
-    title: "If you are a college",
+    title: "If You Are a College",
     text: "Map 100+ IT courses to your syllabus, plus courses in AI, communication and life skills. Certify students and strengthen your NAAC record.",
   },
   {
     id: "ngo",
-    title: "If you are an NGO or CSR team",
+    title: "If You Are an NGO or CSR Team",
     text: "Make your budget go further and reach lakhs of learners. We co-create tutorials in your communities' languages and give you data to report to funders.",
   },
   {
     id: "district",
-    title: "If you are a district administration",
+    title: "If You Are a District Administration",
     text: "Train thousands of frontline workers to one standard. In our health projects, underweight fell by 47% across 8,346 children.",
   },
 ];
 
 /**
  * Founder's vision.
- * DRAFT — needs Prof. Kannan's approval before the site goes live.
- * Every sentence is taken from his own published writing:
+ * Final wording, approved by the EduPyramids team (18 Nov 2026).
+ * Based on his own published writing:
  *   - headline, para 3: "Why Every Student Needs an Educational Laptop"
  *   - para 1: "A Note from Prof. Kannan M. Moudgalya" (Future-Ready Children flyer)
  *   - paras 2 and 4: "Spoken Tutorial: A Collaborative and Scalable Education Technology",
@@ -241,9 +242,9 @@ export const founderVision = {
   headline: "In the age of AI, every student must learn how to learn.",
   quote: [
     "From my humble beginnings in Namakkal, studying in a Tamil-medium school, to becoming a professor at IIT Bombay, I received opportunities that shaped my life. Today, I want to help create similar opportunities for children across India.",
-    "The target audience for a spoken tutorial is a remote child, working alone at midnight without anyone to help her. This is the only time when she will get time to study, after completing all her chores.",
-    "One cannot learn to swim by watching a video. The same is true of software. A student learns only by doing. Watch, practice, repeat.",
-    "Spoken tutorial has the potential to empower every child in our country.",
+    "Every Spoken Tutorial is made for a child in a remote area, working alone at midnight with no one to help her. This is the only time she gets to study, after finishing all her chores.",
+    "One cannot learn to swim by watching a video. The same is true for any skill. A student learns only by doing. Watch. Practice. Repeat.",
+    "Spoken Tutorial has the potential to empower every child in our country.",
   ],
 };
 
@@ -251,14 +252,14 @@ export const navigationLinks = [
   { name: "School", href: "#school" },
   { name: "College", href: "#college" },
   { name: "Health", href: "#health" },
-  { name: "Our method", href: "#about" },
+  { name: "Our Method", href: "#about" },
   { name: "Founder", href: "#founder" },
   { name: "Testimonials", href: "#testimonials" },
 ];
 
 export const contactInfo = {
   email: "contact@edupyramids.org",
-  phone: "+91 22 2576 4229",
+  phone: "+91 77381 88213",
   company: "EduPyramids Educational Services Pvt. Ltd.",
   address: "6016A, SINE, RBTIC, IIT Bombay, Powai, Mumbai 400076",
 };

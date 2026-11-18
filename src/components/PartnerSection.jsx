@@ -7,8 +7,8 @@ export const PartnerSection = () => (
   <section id="partners" className="scroll-mt-16 border-t border-slate-200/70 bg-slate-50/70">
     <div className="mx-auto max-w-6xl px-4 pb-4 pt-20 sm:px-6 lg:pt-24">
       <div className="max-w-2xl">
-        <p className="text-sm font-semibold text-brand-600">For every partner</p>
-        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Why partner with us</h2>
+        <p className="text-sm font-semibold text-brand-600">For Every Partner</p>
+        <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Why Partner with Us</h2>
         <p className="mt-4 text-lg leading-relaxed text-slate-600">
           Looking to upskill lakhs of learners? Need a cost-effective, scalable training model?
         </p>

@@ -54,7 +54,7 @@ export const Testimonials = () => {
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row sm:items-end">
           <div className="text-center sm:text-left">
             <p className="text-sm font-semibold text-brand-600">Testimonials</p>
-            <h2 className="mt-2 text-3xl font-bold sm:text-4xl">What people say</h2>
+            <h2 className="mt-2 text-3xl font-bold sm:text-4xl">What People Say</h2>
           </div>
           <div className="hidden sm:flex items-center gap-2">
             <button

@@ -54,7 +54,7 @@ export const Navbar = () => {
             Contact
           </Button>
           <Button href="#verticals" size="sm">
-            Explore verticals
+            Explore Verticals
           </Button>
         </div>
 
@@ -87,7 +87,7 @@ export const Navbar = () => {
               ))}
             </ul>
             <Button href="#verticals" className="mt-3 w-full" onClick={() => setOpen(false)}>
-              Explore verticals
+              Explore Verticals
             </Button>
           </nav>
         </div>

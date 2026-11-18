@@ -19,7 +19,7 @@ export const FounderVision = () => {
           fallbackClassName="bg-none bg-navy-50 text-navy-500/40 [&_svg]:size-16"
         />
         <figure>
-          <p className="text-sm font-semibold text-brand-600">Founder’s vision</p>
+          <p className="text-sm font-semibold text-brand-600">Founder’s Vision</p>
           {headline && <h2 className="mt-2 text-3xl font-bold sm:text-4xl">{headline}</h2>}
           <blockquote className="mt-6 space-y-4 text-[17px] leading-relaxed text-slate-600">
             {quote.map((p, i) => (

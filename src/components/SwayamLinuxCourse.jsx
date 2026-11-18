@@ -154,7 +154,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
                 </div>
               </div>
               <div className="absolute -bottom-3 right-4 rounded-xl bg-white px-4 py-2.5 text-sm font-extrabold text-[#10233f] shadow-xl">
-                Learn. Practise. Grow.
+                Learn. Practice. Grow.
               </div>
             </div>
           </div>
@@ -240,7 +240,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
                 Why learn Linux?
               </div>
               <h2 className="mt-2 text-3xl font-extrabold text-[#10233f] sm:text-4xl">
-                Linux is behind systems we rely on
+                Linux Is Behind Systems We Rely On
               </h2>
               <p className="mt-3 text-base text-[#64748b]">
                 Explore examples of Linux and open-source technologies in important digital infrastructure.
@@ -308,7 +308,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
                 Career opportunities
               </div>
               <h2 className="mt-2 text-3xl font-extrabold text-[#10233f] sm:text-4xl">
-                Skills that connect to technology careers
+                Skills That Connect to Technology Careers
               </h2>
               <p className="mt-3 text-base text-[#64748b]">
                 Linux knowledge can support a range of roles across IT infrastructure, cloud, DevOps and security.
@@ -343,7 +343,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
                 Learner story
               </div>
               <h2 className="mt-2 text-3xl font-extrabold text-[#10233f] sm:text-4xl">
-                Learning that builds confidence
+                Learning That Builds Confidence
               </h2>
               <p className="mt-3 text-base text-[#64748b]">
                 Hear how hands-on learning can open doors to new opportunities.
@@ -368,7 +368,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6">
             <div>
               <h2 className="text-2xl font-bold sm:text-3xl text-white">
-                Ready to take your first step with Linux?
+                Ready to Take Your First Step with Linux?
               </h2>
               <p className="mt-1 text-sm text-[#d3e6f3] sm:text-base">
                 Enrol through SWAYAM Plus and start learning for just ₹375.
@@ -464,7 +464,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
               Need help?
             </div>
             <h2 className="mt-2 text-3xl font-extrabold text-[#10233f] sm:text-4xl">
-              Queries? Get in touch with our team.
+              Queries? Get in Touch with Our Team.
             </h2>
             <p className="mt-3 text-base text-[#64748b]">
               Our team can help with institutional and course-related enquiries.

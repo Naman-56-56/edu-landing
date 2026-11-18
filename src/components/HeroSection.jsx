@@ -25,20 +25,18 @@ export const HeroSection = () => (
         </div>
 
         <h1 className="text-4xl font-bold leading-[1.1] sm:text-5xl lg:text-[3.5rem]">
-          Empowering futures through{' '}
-          <span className="text-navy-600">education</span> &amp;{' '}
-          <span className="text-brand-500">healthcare</span>
+          Empowering Futures through <span className="text-brand-500">Skills Training</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">{organizationInfo.heroLead}</p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button href="#verticals" size="lg">
-            Explore our verticals
+            Explore Our Verticals
             <ArrowRight />
           </Button>
           <Button href="#contact" size="lg" variant="outline">
-            Get in touch
+            Get in Touch
           </Button>
         </div>
 
