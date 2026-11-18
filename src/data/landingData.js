@@ -146,8 +146,8 @@ export const verticalsData = [
     tone: "health",
     ctaText: "Explore Health",
     linkKey: "health",
-    image: "/assets/vertical-health-care.webp",
-    imageAlt: "Illustration of a mother feeding her baby",
+    image: "/assets/carousel-health-training.webp",
+    imageAlt: "Frontline health workers in a Health Spoken Tutorial training session",
   },
 ];
 

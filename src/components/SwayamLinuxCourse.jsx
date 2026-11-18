@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 
-const SWAYAM_ENROLL_URL = 'https://swayam-plus.swayam2.ac.in/';
+const SWAYAM_ENROLL_URL = 'https://swayamplus.education.gov.in/courses/linux-ubuntu';
 const SPOKEN_TUTORIAL_CONTACT_URL =
   'https://process.spoken-tutorial.org/index.php/Software-Training#Contacts_For_Training';
 
@@ -287,7 +287,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-sm font-semibold text-brand-600">Why Learn Linux?</p>
               <h2 className="mt-2 text-3xl font-bold sm:text-4xl text-slate-900">
-                Linux is behind systems we rely on
+                Linux Is Behind Systems We Rely On
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Explore examples of Linux and open-source technologies in important digital infrastructure.
@@ -361,7 +361,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-sm font-semibold text-brand-600">Career Opportunities</p>
               <h2 className="mt-2 text-3xl font-bold sm:text-4xl text-slate-900">
-                Skills that connect to technology careers
+                Skills That Connect to Technology Careers
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Linux knowledge can support a range of roles across IT infrastructure, cloud, DevOps and security.
@@ -394,7 +394,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-sm font-semibold text-brand-600">Learner Story</p>
               <h2 className="mt-2 text-3xl font-bold sm:text-4xl text-slate-900">
-                Learning that builds confidence
+                Learning That Builds Confidence
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
                 Hear how hands-on learning can open doors to new opportunities.
@@ -427,7 +427,7 @@ export const SwayamLinuxCourse = ({ onBack }) => {
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6">
             <div>
               <h2 className="text-2xl font-bold sm:text-3xl text-white">
-                Ready to take your first step with Linux?
+                Ready to Take Your First Step with Linux?
               </h2>
               <p className="mt-1.5 text-sm text-navy-200 sm:text-base">
                 Enrol through SWAYAM Plus and start learning for just ₹375.

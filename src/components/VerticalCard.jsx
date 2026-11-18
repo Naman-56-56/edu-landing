@@ -19,14 +19,20 @@ export const VerticalCard = ({ vertical }) => {
       id={vertical.id}
       className="group flex scroll-mt-24 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-navy-900/5"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 short:aspect-[2/1] shorter:aspect-[7/2]">
+      <div
+        className="relative aspect-[16/10] overflow-hidden bg-slate-100 short:aspect-[2/1] shorter:aspect-[7/2]"
+        style={vertical.imageBg ? { backgroundColor: vertical.imageBg } : undefined}
+      >
         <FallbackImage
           src={vertical.image}
           alt={vertical.imageAlt || vertical.title}
           loading="lazy"
           icon={tone.icon}
           className={cn(
-            'size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]',
+            'size-full transition-transform duration-500 group-hover:scale-[1.03]',
+            // 'contain' shows the whole illustration at every screen size; the frame
+            // is filled with imageBg, which matches the illustration's background.
+            vertical.imageFit === 'contain' ? 'object-contain object-bottom' : 'object-cover',
             vertical.imagePosition === 'top' && 'object-top'
           )}
           fallbackClassName={cn('bg-gradient-to-br [&_svg]:size-14', tone.fallback)}
