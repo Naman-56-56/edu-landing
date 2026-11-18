@@ -16,8 +16,11 @@ import { Logo } from '@/components/Logo';
 const SWAYAM_ENROLL_URL = 'https://swayamplus.education.gov.in/courses/linux-ubuntu';
 const SPOKEN_TUTORIAL_CONTACT_URL =
   'https://process.spoken-tutorial.org/index.php/Software-Training#Contacts_For_Training';
+// Official course intro video (the one SWAYAM Plus shows), on the Spoken-Tutorial IIT Bombay channel.
+const INTRO_VIDEO_ID = '4Ta06Yg5Ndk';
 
 export const SwayamLinuxCourse = ({ onBack }) => {
+  const [videoPlaying, setVideoPlaying] = useState(false);
   const [selectedSource, setSelectedSource] = useState('');
   const [formFeedback, setFormFeedback] = useState(
     'Demo interaction only — connect this form to your website analytics or backend before publishing.'
@@ -226,24 +229,36 @@ export const SwayamLinuxCourse = ({ onBack }) => {
               </p>
             </div>
 
-            {/* Video preview container */}
-            <div className="relative mx-auto mt-12 flex min-h-[360px] max-w-4xl flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 p-8 text-center text-white shadow-xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(46,52,148,0.4),transparent_65%)]" />
-              <div className="relative z-10 flex flex-col items-center">
+            {/* Course intro video: a preview panel that loads the YouTube player only when clicked */}
+            <div className="relative mx-auto mt-12 aspect-video max-w-4xl overflow-hidden rounded-2xl bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 text-white shadow-xl">
+              {videoPlaying ? (
+                <iframe
+                  className="absolute inset-0 size-full"
+                  src={`https://www.youtube-nocookie.com/embed/${INTRO_VIDEO_ID}?autoplay=1&rel=0`}
+                  title="Linux course introduction"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : (
                 <button
                   type="button"
-                  aria-label="Play 24-second course introduction"
-                  className="flex size-20 items-center justify-center rounded-full bg-white text-navy-600 shadow-2xl transition duration-200 hover:scale-110 hover:text-brand-500"
+                  onClick={() => setVideoPlaying(true)}
+                  aria-label="Play the Linux course introduction video"
+                  className="group/video absolute inset-0 flex flex-col items-center justify-center p-4 text-center sm:p-8"
                 >
-                  <Play className="size-8 fill-current pl-1" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(46,52,148,0.4),transparent_65%)]" />
+                  <span className="relative z-10 flex size-14 items-center justify-center rounded-full bg-white text-navy-600 shadow-2xl transition duration-200 group-hover/video:scale-110 group-hover/video:text-brand-500 sm:size-20">
+                    <Play className="size-6 fill-current pl-1 sm:size-8" />
+                  </span>
+                  <strong className="relative z-10 mt-4 text-lg font-bold text-white sm:mt-6 sm:text-2xl">
+                    Watch a quick course introduction
+                  </strong>
+                  <span className="relative z-10 mt-2 hidden max-w-md text-sm leading-relaxed text-slate-300 sm:block">
+                    Get a quick overview of the Linux course, its relevance and learning opportunity.
+                  </span>
                 </button>
-                <strong className="mt-6 text-xl font-bold sm:text-2xl text-white">
-                  Watch this 24-second course introduction
-                </strong>
-                <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-300">
-                  Get a quick overview of the Linux course, its relevance and learning opportunity.
-                </p>
-              </div>
+              )}
             </div>
 
             {/* Section tabs */}
