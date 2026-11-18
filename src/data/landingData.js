@@ -264,9 +264,10 @@ export const contactInfo = {
   address: "6016A, SINE, RBTIC, IIT Bombay, Powai, Mumbai 400076",
 };
 
+// Official accounts, as linked from the footer of edupyramids.org / spoken-tutorial.org.
+// Add Instagram (or X) here once an official EduPyramids account exists.
 export const socialLinks = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/spoken-tutorial-school/home/" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/spokentutorial" },
   { name: "YouTube", href: "https://www.youtube.com/user/SpokenTutorialIITB" },
   { name: "Facebook", href: "https://www.facebook.com/SpokenTutorial.org" },
-  { name: "Instagram", href: "https://www.instagram.com" },
 ];
