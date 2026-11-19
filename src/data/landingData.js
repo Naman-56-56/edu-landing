@@ -154,7 +154,7 @@ export const verticalsData = [
 export const testimonials = [
   {
     quote:
-      "This approach consistently helped my students achieve a 100% pass rate with 85% average and strong confidence.",
+      "This approach consistently helped my students achieve a 100% pass rate with 85% average and strong confidence for 10 years in a row.",
     name: "Mr. Amit Kumar",
     role: "Computer Teacher",
     org: "Jawahar Navodaya Vidyalaya, Himachal Pradesh",

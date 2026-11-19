@@ -373,23 +373,24 @@ export const SwayamLinuxCourse = ({ onBack }) => {
         {/* Career Opportunities */}
         <section className="py-20 sm:py-28" id="careers">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold text-brand-600">Career Opportunities</p>
               <h2 className="mt-2 text-3xl font-bold sm:text-4xl text-slate-900">
                 Skills That Connect to Technology Careers
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                Linux knowledge can support a range of roles across IT infrastructure, cloud, DevOps and security.
+                Linux is the most ideal operating system for Artificial Intelligence, data science, and modern computing. Today, virtually all leading AI models, deep learning frameworks, and GPU clusters run on Linux — making Linux knowledge essential for careers in AI, cloud infrastructure, DevOps, and cybersecurity.
               </p>
             </div>
 
-            <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
               {[
-                { title: 'Linux Administrator', icon: '🖥️' },
-                { title: 'DevOps Engineer', icon: '⚙️' },
+                { title: 'AI & Machine Learning', icon: '🤖' },
                 { title: 'Cloud Engineer', icon: '☁️' },
+                { title: 'DevOps Engineer', icon: '⚙️' },
+                { title: 'Linux Administrator', icon: '🖥️' },
                 { title: 'System Administrator', icon: '🛠️' },
-                { title: 'Cybersecurity Professional', icon: '🔐' },
+                { title: 'Cybersecurity', icon: '🔐' },
               ].map((role) => (
                 <div
                   key={role.title}
